@@ -290,20 +290,28 @@ const renderBoardInfo = () => {
                 moveAbleList = [];
                 movePreInfo = {'i': i, 'j': j};
                 if (i !== 0) {
-                    showArrow(piece, TOP);
-                    moveAbleList.push({'i': i-1, 'j': j});
+                    if (boardInfo.boardInfo[i-1][j].count < 2) {
+                        showArrow(piece, TOP);
+                        moveAbleList.push({'i': i-1, 'j': j});
+                    }
                 }
                 if (i !== 3) {
-                    showArrow(piece, BOTTOM);
-                    moveAbleList.push({'i': i+1, 'j': j});
+                    if (boardInfo.boardInfo[i+1][j].count < 2) {
+                        showArrow(piece, BOTTOM);
+                        moveAbleList.push({'i': i+1, 'j': j});
+                    }
                 }
                 if (j !== 0) {
-                    showArrow(piece, LEFT);
-                    moveAbleList.push({'i': i, 'j': j-1});
+                    if (boardInfo.boardInfo[i][j-1].count < 2) {
+                        showArrow(piece, LEFT);
+                        moveAbleList.push({'i': i, 'j': j-1});
+                    }
                 }
                 if (j !== 3) {
-                    showArrow(piece, RIGHT);
-                    moveAbleList.push({'i': i, 'j': j+1});
+                    if (boardInfo.boardInfo[i][j+1].count < 2) {
+                        showArrow(piece, RIGHT);
+                        moveAbleList.push({'i': i, 'j': j+1});
+                    }
                 }
             });
             cell.appendChild(piece);
