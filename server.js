@@ -37,8 +37,8 @@ io.on('connection', socket => {
 
         console.log('MATCHING_INFO[socket.id]: ',MATCHING_INFO[socket.id]);
         if (!MATCHING_INFO[socket.id]) { return; }
-        delete MATCHING_INFO[socket.id];
         const opponentSocketId = MATCHING_INFO[socket.id].OPPONENT_UNIQUE_ID;
+        delete MATCHING_INFO[socket.id];
         console.log('opponentSocketId: ',opponentSocketId);
         if (!opponentSocketId) { return; }
         io.emit('opponentDisconnect', opponentSocketId);
