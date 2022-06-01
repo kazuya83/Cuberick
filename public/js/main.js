@@ -451,7 +451,7 @@ const setCuberickGame = (isWin) => {
 const craeteOppnentHavePie = (opponentInfo) => {
     const _opponentHavePies = COMMON.getElemById('opponentHavePies');
     if (_opponentHavePies) { _opponentHavePies.remove(); }
-    const list = opponentInfo.havePie;
+    const list = JSON.parse(JSON.stringify(opponentInfo.havePie));
     const opponentHavePies = document.createElement('div');
     opponentHavePies.id = 'opponentHavePies';
     opponentHavePies.style.display = 'flex';
