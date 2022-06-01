@@ -467,6 +467,7 @@ const craeteOppnentHavePie = (opponentInfo) => {
     discription.style.top = '0px';
     opponentHavePies.appendChild(discription);
 
+    list.reverse();
     list.forEach(colorIndex => {
         const pie = document.createElement('div');
         pie.setAttribute('color', colorIndex);
