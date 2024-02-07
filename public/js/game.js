@@ -7,34 +7,6 @@ const opponentKey = COMMON.getUrlParam('opponent_key');
 const JANKEN_OPPONENT = `${roomId}_${opponentKey}_janken`;
 const JANKEN_OWN = `${roomId}_${uniqueKey}_janken`;
 
-// socket.emit(`${roomId}_${uniqueKey}`, );
-
-// socket.on(roomId, message => {
-//     console.log(message);
-// });
-
-// socket.emit()
-
-socket.on('message', message => {
-    console.log(message);
-    // Emit message to server
-});
-
-socket.emit('test', 'test');
-
-socket.on('test', test => {
-    console.log(test);
-});
-
-socket.on(JANKEN_OWN, handType => {
-    console.log('test');
-});
-
-socket.on(JANKEN_OPPONENT, handType => {
-    console.log('aaaaaaaaaaaaaaaaaaaaaa');
-    console.log('janken: ', handType);
-});
-
 const setJanken = () => {
     const body = document.body;
     body.style.width = '100%';
